@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOVI | Premium Streetwear & Heavyweight Hoodies</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#08080a',
+                            dark: '#101114',
+                            surface: '#17191e',
+                            border: '#262930',
+                            neon: '#ccff00',
+                            violet: '#8a2be2',
+                            pink: '#ff007f',
+                            text: '#f3f4f6',
+                            muted: '#9ca3af'
+                        }
+                    },
+                    boxShadow: {
+                        'neon-glow': '0 0 25px -5px rgba(204, 255, 0, 0.35)',
+                        'neon-glow-lg': '0 0 40px -5px rgba(204, 255, 0, 0.5)',
+                        'violet-glow': '0 0 25px -5px rgba(138, 43, 226, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #08080a;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08080a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262930;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ccff00;
+        }
+
+        /* Infinite Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 22s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(23, 25, 30, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(8, 8, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Image hover zooms */
+        .img-zoom-container img {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Gradient Text */
+        .text-gradient-neon {
+            background: linear-gradient(135deg, #ffffff 0%, #ccff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #ccff00 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-brand-neon selection:text-black">
+
+    <div class="bg-brand-neon text-black font-display font-black text-xs uppercase tracking-widest overflow-hidden py-2.5 border-b border-black/20">
+        <div class="animate-marquee flex whitespace-nowrap">
+            <div class="flex items-center gap-12 px-6">
+                <span>â¡ KOVI DROP 06: DISPONIBLE AHORA</span>
+                <span>â¢</span>
+                <span>ENVÃO GRATIS A TODO EL PAÃS EN COMPRAS > $999 MXN</span>
+                <span>â¢</span>
+                <span>480 GSM HEAVYWEIGHT COTTON</span>
+                <span>â¢</span>
+                <span>USA CÃDIGO <strong class="bg-black text-brand-neon px-2 py-0.5 rounded">KOVI15</strong> PARA 15% OFF</span>
+                <span>â¢</span>
+            </div>
+            <div class="flex items-center gap-12 px-6">
+                <span>â¡ KOVI DROP 06: DISPONIBLE AHORA</span>
+                <span>â¢</span>
+                <span>ENVÃO GRATIS A TODO EL PAÃS EN COMPRAS > $999 MXN</span>
+                <span>â¢</span>
+                <span>480 GSM HEAVYWEIGHT COTTON</span>
+                <span>â¢</span>
+                <span>USA CÃDIGO <strong class="bg-black text-brand-neon px-2 py-0.5 rounded">KOVI15</strong> PARA 15% OFF</span>
+                <span>â¢</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 glass-nav border-b border-brand-border/60 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-brand-neon p-2 rounded-xl border border-transparent hover:border-brand-border">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 bg-brand-neon rounded-xl flex items-center justify-center font-display font-black text-black text-xl group-hover:rotate-12 transition-transform shadow-neon-glow">
+                        K
+                    </div>
+                    <span class="font-display text-2xl sm:text-3xl font-black tracking-tighter text-white uppercase">
+                        KOVI<span class="text-brand-neon">.</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Links -->
+                <nav class="hidden lg:flex items-center space-x-8 font-display text-xs font-bold uppercase tracking-widest">
+                    <a href="#inicio" class="text-white hover:text-brand-neon transition-colors">Inicio</a>
+                    <a href="#catalogo" class="text-gray-400 hover:text-brand-neon transition-colors">ColecciÃ³n Hoodies</a>
+                    <a href="#drops" class="text-gray-400 hover:text-brand-neon transition-colors">EdiciÃ³n Especial</a>
+                    <a href="#manifiesto" class="text-gray-400 hover:text-brand-neon transition-colors">Calidad 480GSM</a>
+                    <a href="#faq" class="text-gray-400 hover:text-brand-neon transition-colors">Soporte</a>
+                </nav>
+
+                <!-- Action Toolbar -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Search Trigger -->
+                    <button id="search-toggle-btn" class="p-2.5 text-gray-300 hover:text-brand-neon hover:bg-brand-surface rounded-xl border border-transparent hover:border-brand-border transition-all" title="Buscar hoodie">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+
+                    <!-- Wishlist Trigger -->
+                    <button id="wishlist-btn" class="relative p-2.5 text-gray-300 hover:text-brand-pink hover:bg-brand-surface rounded-xl border border-transparent hover:border-brand-border transition-all" title="Lista de Deseos">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                        <span id="wishlist-count" class="absolute -top-1 -right-1 w-4 h-4 bg-brand-pink text-white font-bold text-[10px] rounded-full flex items-center justify-center hidden">0</span>
+                    </button>
+
+                    <!-- Cart Trigger -->
+                    <button id="cart-open-btn" class="relative flex items-center gap-2.5 px-3.5 py-2.5 bg-brand-neon text-black font-display font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-neon-glow hover:bg-lime-300 transition-all hover:scale-105 active:scale-95">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Carrito</span>
+                        <span id="cart-count-badge" class="bg-black text-brand-neon font-black text-[11px] px-2 py-0.5 rounded-md">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inline Live Search Dropdown Bar -->
+        <div id="search-drawer" class="hidden border-t border-brand-border bg-brand-dark p-4 shadow-2xl transition-all">
+            <div class="max-w-3xl mx-auto flex items-center gap-3">
+                <i data-lucide="search" class="w-5 h-5 text-brand-neon"></i>
+                <input type="text" id="live-search-input" placeholder="Escribe para buscar... ej. Boxy, Acid Wash, Minimal, Heavyweight" class="w-full bg-transparent text-white focus:outline-none text-sm placeholder-gray-500 font-medium">
+                <button id="search-close-btn" class="text-gray-400 hover:text-white p-1">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-brand-border bg-brand-dark px-6 py-6 space-y-4 font-display font-bold text-sm uppercase">
+            <a href="#inicio" class="block text-white hover:text-brand-neon">Inicio</a>
+            <a href="#catalogo" class="block text-gray-400 hover:text-brand-neon">ColecciÃ³n Hoodies</a>
+            <a href="#drops" class="block text-gray-400 hover:text-brand-neon">EdiciÃ³n Especial</a>
+            <a href="#manifiesto" class="block text-gray-400 hover:text-brand-neon">Calidad 480GSM</a>
+            <a href="#faq" class="block text-gray-400 hover:text-brand-neon">Soporte</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 sm:py-24">
+            <!-- Neon Ambient Glows -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-brand-violet/15 rounded-full blur-[140px] pointer-events-none"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-brand-neon/30 text-xs font-display font-bold tracking-widest text-brand-neon uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-neon animate-pulse"></span> DROP 2026 â¢ HEAVYWEIGHT SERIES
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-black tracking-tight text-white leading-[0.95] uppercase">
+                        STREETWEAR <br>
+                        <span class="text-gradient-purple">EVOLUTION</span>
+                    </h1>
+
+                    <p class="text-brand-muted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Hoodies urbanas diseÃ±adas sin rodeos. Confeccionadas en algodÃ³n orgÃ¡nico pesado de <strong class="text-white font-bold">480 GSM</strong>, caÃ­das estructuradas Boxy Fit y acabados industriales hechos para durar.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 bg-brand-neon text-black font-display font-black text-xs uppercase tracking-widest rounded-xl hover:bg-lime-300 transition-all shadow-neon-glow hover:scale-105 text-center">
+                            Explorar Hoodies
+                        </a>
+                        <a href="#drops" class="w-full sm:w-auto px-8 py-4 glass-card text-white font-display font-bold text-xs uppercase tracking-widest rounded-xl hover:border-gray-400 transition-all text-center">
+                            Ver Limited Drops
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="pt-8 border-t border-brand-border/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-display font-black text-xl sm:text-2xl text-white">480 GSM</p>
+                            <p class="text-[11px] text-brand-muted uppercase font-semibold">AlgodÃ³n Pesado</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-black text-xl sm:text-2xl text-brand-neon">BOXY FIT</p>
+                            <p class="text-[11px] text-brand-muted uppercase font-semibold">Silueta Perfecta</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-black text-xl sm:text-2xl text-white">4.9 â</p>
+                            <p class="text-[11px] text-brand-muted uppercase font-semibold">+2,500 ReseÃ±as</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Feature Image -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden glass-card p-3 border border-brand-border shadow-2xl img-zoom-container group">
+                        <div class="relative w-full h-full rounded-2xl overflow-hidden bg-brand-surface">
+                            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=1000" alt="KOVI Streetwear Model" class="w-full h-full object-cover object-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+                            
+                            <!-- Overlay Card -->
+                            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl glass-card border border-white/10 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] font-display font-black text-brand-neon uppercase tracking-widest">Hoodie Destacada</span>
+                                    <h3 class="text-sm font-bold text-white">KOVI Acid Black Heavyweight</h3>
+                                </div>
+                                <span class="font-display font-black text-lg text-white">$1,299</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="border-y border-brand-border bg-brand-dark/60 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                    <div class="p-3 bg-brand-neon/10 rounded-xl text-brand-neon">
+                        <i data-lucide="truck" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-xs text-white uppercase">EnvÃ­o ExprÃ©s Gratis</h4>
+                        <p class="text-[11px] text-brand-muted">En compras mayores a $999 MXN.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                    <div class="p-3 bg-brand-neon/10 rounded-xl text-brand-neon">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-xs text-white uppercase">AlgodÃ³n 100% 480 GSM</h4>
+                        <p class="text-[11px] text-brand-muted">Tela pesada de grado industrial.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                    <div class="p-3 bg-brand-neon/10 rounded-xl text-brand-neon">
+                        <i data-lucide="arrow-left-right" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-xs text-white uppercase">Cambios Gratis</h4>
+                        <p class="text-[11px] text-brand-muted">30 dÃ­as de garantÃ­a asegurada.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                    <div class="p-3 bg-brand-neon/10 rounded-xl text-brand-neon">
+                        <i data-lucide="lock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-xs text-white uppercase">Pago 100% Seguro</h4>
+                        <p class="text-[11px] text-brand-muted">Tarjetas, PayPal y OXXO.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-display font-black uppercase text-brand-neon tracking-widest">CatÃ¡logo Oficial</span>
+                    <h2 class="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">HOODIES & STREETWEAR</h2>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-2" id="filter-buttons">
+                    <button data-cat="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all bg-brand-neon text-black border border-brand-neon">Todas</button>
+                    <button data-cat="oversized" class="filter-btn px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all glass-card text-gray-300 hover:text-white border-brand-border">Oversized</button>
+                    <button data-cat="acid-wash" class="filter-btn px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all glass-card text-gray-300 hover:text-white border-brand-border">Acid Wash</button>
+                    <button data-cat="minimal" class="filter-btn px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all glass-card text-gray-300 hover:text-white border-brand-border">Minimal</button>
+                    <button data-cat="limited" class="filter-btn px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all glass-card text-gray-300 hover:text-white border-brand-border">EdiciÃ³n Especial</button>
+                </div>
+            </div>
+
+            <!-- Product Cards Dynamic Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Javascript will generate product cards here -->
+            </div>
+        </section>
+
+        <section id="drops" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="relative rounded-3xl overflow-hidden glass-card border border-brand-border p-8 sm:p-12 lg:p-16">
+                <div class="absolute -right-20 -top-20 w-80 h-80 bg-brand-violet/30 rounded-full blur-[100px] pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <span class="px-3.5 py-1.5 rounded-full bg-brand-violet/20 border border-brand-violet/40 text-brand-neon font-display font-bold text-xs uppercase tracking-widest">
+                            Limited Drop #06
+                        </span>
+                        <h2 class="text-3xl sm:text-5xl font-display font-black text-white uppercase leading-tight">
+                            KOVI ACID WASH <br><span class="text-brand-neon">COLLECTION</span>
+                        </h2>
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            Proceso de teÃ±ido artesanal e individual con minerales. Cada hoodie pasa por un tratamiento tÃ©rmico que le otorga patrones Ãºnicos. No hay dos piezas iguales en el planeta.
+                        </p>
+                        <div class="flex items-center gap-6 pt-2">
+                            <div>
+                                <p class="text-xs text-brand-muted font-bold uppercase">Stock restante</p>
+                                <p class="font-display font-black text-2xl text-brand-neon">24 Piezas</p>
+                            </div>
+                            <div class="h-8 w-px bg-brand-border"></div>
+                            <div>
+                                <p class="text-xs text-brand-muted font-bold uppercase">Gramaje</p>
+                                <p class="font-display font-black text-2xl text-white">480 GSM</p>
+                            </div>
+                        </div>
+                        <button onclick="filterCategory('acid-wash')" class="inline-block px-8 py-4 bg-brand-neon text-black font-display font-black text-xs uppercase tracking-widest rounded-xl hover:bg-lime-300 transition-all shadow-neon-glow">
+                            Ver ColecciÃ³n Acid Wash
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square rounded-2xl overflow-hidden border border-brand-border bg-brand-surface img-zoom-container">
+                            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=600" alt="Acid Wash Detail 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square rounded-2xl overflow-hidden border border-brand-border bg-brand-surface img-zoom-container mt-6">
+                            <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&q=80&w=600" alt="Acid Wash Detail 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="manifiesto" class="bg-brand-dark border-y border-brand-border py-24 my-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl space-y-6">
+                <span class="text-xs font-display font-black text-brand-neon uppercase tracking-widest">Nuestra FilosofÃ­a</span>
+                <h2 class="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight leading-tight">
+                    NO ES SOLO UNA HOODIE. <br>ES TU ARMADURA URBANA.
+                </h2>
+                <p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+                    En KOVI rechazamos el fast-fashion de telas delgadas. Confeccionamos exclusivamente con algodÃ³n orgÃ¡nico de 480 GSM. DiseÃ±os de caÃ­das pesadas que mantienen su estructura lavado tras lavado.
+                </p>
+            </div>
+        </section>
+
+        <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+            <div class="text-center">
+                <span class="text-xs font-display font-black text-brand-neon uppercase tracking-widest">Resolvemos tus dudas</span>
+                <h2 class="text-3xl font-display font-black text-white uppercase">PREGUNTAS FRECUENTES</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group glass-card rounded-2xl border border-brand-border p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                    <summary class="flex items-center justify-between text-white font-display font-bold text-sm">
+                        <span>Â¿CÃ³mo sÃ© cuÃ¡l es mi talla ideal en Boxy Fit?</span>
+                        <span class="transition group-open:-rotate-180 text-brand-neon"><i data-lucide="chevron-down" class="w-5 h-5"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs text-brand-muted leading-relaxed">
+                        Nuestras hoodies tienen un corte Boxy u Oversized natural. Si deseas el fit tal como fue diseÃ±ado por la marca, solicita tu talla habitual. Si prefieres un ajuste mÃ¡s ajustado al cuerpo, te sugerimos pedir una talla menor.
+                    </p>
+                </details>
+
+                <details class="group glass-card rounded-2xl border border-brand-border p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                    <summary class="flex items-center justify-between text-white font-display font-bold text-sm">
+                        <span>Â¿CuÃ¡nto tardan los envÃ­os?</span>
+                        <span class="transition group-open:-rotate-180 text-brand-neon"><i data-lucide="chevron-down" class="w-5 h-5"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs text-brand-muted leading-relaxed">
+                        Los envÃ­os nacionales tardan de 2 a 4 dÃ­as hÃ¡biles vÃ­a DHL o FedEx Express. Te enviamos tu nÃºmero de rastreo al instante a tu correo o WhatsApp.
+                    </p>
+                </details>
+
+                <details class="group glass-card rounded-2xl border border-brand-border p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                    <summary class="flex items-center justify-between text-white font-display font-bold text-sm">
+                        <span>Â¿QuÃ© significa que sea 480 GSM Heavyweight?</span>
+                        <span class="transition group-open:-rotate-180 text-brand-neon"><i data-lucide="chevron-down" class="w-5 h-5"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs text-brand-muted leading-relaxed">
+                        GSM significa "Gramos por Metro Cuadrado". Una hoodie convencional de tienda departamental suele ser de 200 a 280 GSM. KOVI utiliza 480 GSM, lo que significa casi el doble de grosor, cuerpo rÃ­gido y la mejor calidad tÃ©rmica disponible.
+                    </p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-drawer-backdrop" class="fixed inset-0 bg-black/80 z-50 hidden transition-opacity"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-brand-dark border-l border-brand-border z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-brand-border flex items-center justify-between bg-brand-black">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-neon"></i>
+                <h3 class="font-display font-black text-base text-white uppercase">Tu Carrito (<span id="cart-drawer-count">0</span>)</h3>
+            </div>
+            <button id="cart-close-btn" class="text-gray-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Free Shipping Meter -->
+        <div class="bg-brand-surface px-6 py-3.5 border-b border-brand-border">
+            <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span id="shipping-progress-text" class="text-gray-300">Agrega productos para envÃ­o GRATIS</span>
+                <span id="shipping-progress-percent" class="text-brand-neon font-black">0%</span>
+            </div>
+            <div class="w-full h-2 bg-brand-border rounded-full overflow-hidden">
+                <div id="shipping-progress-bar" class="h-full bg-brand-neon transition-all duration-500 w-0"></div>
+            </div>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <div id="cart-empty-view" class="text-center py-20 space-y-4">
+                <i data-lucide="shopping-cart" class="w-16 h-16 text-gray-600 mx-auto"></i>
+                <p class="text-gray-400 text-sm font-medium">AÃºn no has agregado ninguna hoodie.</p>
+                <button onclick="closeCart()" class="px-6 py-3 bg-brand-surface text-white border border-brand-border rounded-xl text-xs font-display font-bold uppercase hover:bg-brand-border">
+                    Explorar ColecciÃ³n
+                </button>
+            </div>
+        </div>
+
+        <!-- Drawer Footer Checkout -->
+        <div class="p-6 border-t border-brand-border bg-brand-black space-y-4">
+            <!-- Coupon Input -->
+            <div class="flex gap-2">
+                <input type="text" id="coupon-code-input" placeholder="CÃDIGO DE DESCUENTO (ej. KOVI15)" class="flex-grow px-3.5 py-2.5 bg-brand-surface border border-brand-border rounded-xl text-xs text-white focus:outline-none focus:border-brand-neon uppercase font-bold">
+                <button id="apply-coupon-btn" class="px-4 py-2.5 bg-brand-border text-white text-xs font-display font-bold uppercase rounded-xl hover:bg-gray-700">Aplicar</button>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <div class="flex justify-between text-gray-400">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal-text" class="text-white font-bold">$0 MXN</span>
+                </div>
+                <div id="discount-row" class="flex justify-between text-brand-neon hidden">
+                    <span>Descuento (15%)</span>
+                    <span id="cart-discount-text">-$0 MXN</span>
+                </div>
+                <div class="flex justify-between text-gray-400">
+                    <span>EnvÃ­o</span>
+                    <span id="cart-shipping-text" class="text-white font-bold">$0 MXN</span>
+                </div>
+                <div class="flex justify-between text-base font-display font-black text-white pt-2 border-t border-brand-border">
+                    <span>TOTAL</span>
+                    <span id="cart-total-text" class="text-brand-neon">$0 MXN</span>
+                </div>
+            </div>
+
+            <button onclick="proceedToCheckout()" class="w-full py-4 bg-brand-neon text-black font-display font-black uppercase text-xs rounded-xl hover:bg-lime-300 transition-all tracking-widest shadow-neon-glow">
+                Finalizar Compra Segura
+            </button>
+        </div>
+    </aside>
+
+    <div id="quick-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4 backdrop-blur-md">
+        <div class="glass-card border border-brand-border rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative p-6 sm:p-8">
+            <button id="close-modal-btn" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl bg-brand-black border border-brand-border">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div id="quick-modal-body" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Javascript will inject modal data here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-notif" class="fixed bottom-6 right-6 bg-brand-neon text-black px-6 py-4 rounded-2xl shadow-neon-glow font-display font-black text-xs uppercase z-50 transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span id="toast-text">Producto agregado al carrito</span>
+    </div>
+
+    <footer class="bg-brand-black border-t border-brand-border pt-16 pb-8 text-xs text-brand-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            
+            <div class="space-y-4">
+                <a href="#" class="font-display text-3xl font-black text-white">KOVI<span class="text-brand-neon">.</span></a>
+                <p class="leading-relaxed">
+                    Especialistas en hoodies heavyweight 480 GSM y ropa urbana de alto gramaje. Redefiniendo el streetwear en MÃ©xico.
+                </p>
+                <div class="flex gap-3 text-white">
+                    <a href="#" class="p-2 bg-brand-surface rounded-xl hover:text-brand-neon border border-brand-border"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="p-2 bg-brand-surface rounded-xl hover:text-brand-neon border border-brand-border"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    <a href="#" class="p-2 bg-brand-surface rounded-xl hover:text-brand-neon border border-brand-border"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-display font-black text-white uppercase tracking-wider mb-4">NavegaciÃ³n</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#inicio" class="hover:text-brand-neon transition-colors">Inicio</a></li>
+                    <li><a href="#catalogo" class="hover:text-brand-neon transition-colors">CatÃ¡logo de Hoodies</a></li>
+                    <li><a href="#drops" class="hover:text-brand-neon transition-colors">Acid Wash Drop</a></li>
+                    <li><a href="#manifiesto" class="hover:text-brand-neon transition-colors">Calidad 480 GSM</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-display font-black text-white uppercase tracking-wider mb-4">Ayuda & Soporte</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#" class="hover:text-brand-neon transition-colors">GuÃ­a de Tallas Boxy Fit</a></li>
+                    <li><a href="#" class="hover:text-brand-neon transition-colors">PolÃ­tica de EnvÃ­os</a></li>
+                    <li><a href="#" class="hover:text-brand-neon transition-colors">Cambios y Devoluciones</a></li>
+                    <li><a href="#faq" class="hover:text-brand-neon transition-colors">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-display font-black text-white uppercase tracking-wider">Newsletter KOVI Club</h4>
+                <p class="text-[11px]">Recibe un 15% OFF en tu primer pedido e infÃ³rmate antes de cada Drop.</p>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="Tu correo electrÃ³nico" class="px-3.5 py-2.5 bg-brand-surface border border-brand-border rounded-xl text-xs text-white focus:outline-none focus:border-brand-neon w-full">
+                    <button onclick="showToast('Â¡Suscrito con Ã©xito al KOVI Club!')" class="px-4 py-2.5 bg-brand-neon text-black font-display font-black text-xs uppercase rounded-xl hover:bg-lime-300">Unirse</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-brand-border/60 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-4">
+            <p>&copy; 2026 KOVI Streetwear Inc. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:underline">Aviso de Privacidad</a>
+                <a href="#" class="hover:underline">TÃ©rminos del Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Database of Hoodies
+        const PRODUCTS_DATA = [
+            {
+                id: 'kovi-boxy-black',
+                name: 'KOVI Heavyweight Boxy Black',
+                category: 'oversized',
+                price: 1099,
+                badge: 'MÃ¡s Vendida',
+                rating: 4.9,
+                reviews: 142,
+                image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=800',
+                description: 'Nuestra silueta icÃ³nica Boxy Fit. Confeccionada en algodÃ³n tejido pesado de 480 GSM, hombros caÃ­dos y capucha rÃ­gida de doble capa.',
+                colors: [
+                    { name: 'Negro CarbÃ³n', hex: '#121215' },
+                    { name: 'Gris Oscuro', hex: '#27272a' }
+                ],
+                sizes: ['S', 'M', 'L', 'XL', 'XXL']
+            },
+            {
+                id: 'kovi-acid-violet',
+                name: 'KOVI Acid Wash Mineral Violet',
+                category: 'acid-wash',
+                price: 1299,
+                badge: 'Proceso Artesanal',
+                rating: 5.0,
+                reviews: 98,
+                image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=800',
+                description: 'Tratamiento de teÃ±ido Ã¡cido individual con minerales. Cada prenda presenta textura Ãºnica y tacto ultra suave.',
+                colors: [
+                    { name: 'Acid Violet', hex: '#4c1d95' },
+                    { name: 'Acid Black', hex: '#1f2937' }
+                ],
+                sizes: ['S', 'M', 'L', 'XL']
+            },
+            {
+                id: 'kovi-cyber-neon',
+                name: 'KOVI Cyber 3M Reflective',
+                category: 'limited',
+                price: 1499,
+                badge: 'EdiciÃ³n Limitada',
+                rating: 4.9,
+                reviews: 64,
+                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+                description: 'Estampa reflectante de alta densidad en el pecho y gorro. EstÃ©tica cyberpunk urbana con cortes rectos.',
+                colors: [
+                    { name: 'Black Cyber', hex: '#0a0a0a' }
+                ],
+                sizes: ['M', 'L', 'XL']
+            },
+            {
+                id: 'kovi-minimal-slate',
+                name: 'KOVI Minimal Essential Slate',
+                category: 'minimal',
+                price: 999,
+                badge: 'BÃ¡sico Premium',
+                rating: 4.8,
+                reviews: 110,
+                image: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&q=80&w=800',
+                description: 'DiseÃ±o limpio sin estampados ruidosos. Un bÃ¡sico esencial de mÃ¡xima densidad para usar todos los dÃ­as.',
+                colors: [
+                    { name: 'Grafito', hex: '#374151' },
+                    { name: 'Oliva', hex: '#3f6212' }
+                ],
+                sizes: ['S', 'M', 'L', 'XL', 'XXL']
+            },
+            {
+                id: 'kovi-raw-hem',
+                name: 'KOVI Raw Edge Industrial',
+                category: 'oversized',
+                price: 1199,
+                badge: 'Nuevo Drop',
+                rating: 4.9,
+                reviews: 45,
+                image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&q=80&w=800',
+                description: 'Costuras deshilachadas expuestas y terminado industrial. Estilo streetwear contemporÃ¡neo.',
+                colors: [
+                    { name: 'Negro Raw', hex: '#121215' }
+                ],
+                sizes: ['S', 'M', 'L', 'XL']
+            }
+        ];
+
+        // App State Variables
+        let cartState = [];
+        let wishlistState = [];
+        let activeCategory = 'all';
+        let appliedDiscount = 0;
+
+        // Render Product Cards Grid
+        function renderProducts(category = 'all', query = '') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            const filtered = PRODUCTS_DATA.filter(p => {
+                const matchCat = category === 'all' || p.category === category;
+                const matchSearch = p.name.toLowerCase().includes(query.toLowerCase()) || 
+                                    p.description.toLowerCase().includes(query.toLowerCase());
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16 text-gray-500 font-display">
+                        <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-3 text-gray-600"></i>
+                        No encontramos hoodies con el tÃ©rmino especificado.
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filtered.forEach(p => {
+                const isWishlisted = wishlistState.includes(p.id);
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-3xl border border-brand-border overflow-hidden img-zoom-container flex flex-col justify-between group hover:border-brand-neon/50 transition-all duration-500";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="relative aspect-[4/5] bg-brand-surface overflow-hidden cursor-pointer" onclick="openQuickModal('${p.id}')">
+                            <span class="absolute top-3 left-3 bg-brand-neon text-black font-display font-black text-[10px] uppercase px-2.5 py-1 rounded-lg z-10 shadow-neon-glow">
+                                ${p.badge}
+                            </span>
+                            
+                            <button onclick="event.stopPropagation(); toggleWishlist('${p.id}')" class="absolute top-3 right-3 p-2.5 rounded-xl glass-card text-white hover:text-brand-pink transition-colors z-10">
+                                <i data-lucide="heart" class="w-4 h-4 ${isWishlisted ? 'fill-brand-pink text-brand-pink' : ''}"></i>
+                            </button>
+
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+                            
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                                <span class="px-5 py-2.5 bg-white text-black font-display font-black text-xs uppercase rounded-xl transform translate-y-3 group-hover:translate-y-0 transition-transform">
+                                    Vista RÃ¡pida
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-5 space-y-2">
+                            <div class="flex items-center justify-between text-xs text-brand-muted">
+                                <span>â ${p.rating} (${p.reviews})</span>
+                                <span class="uppercase font-bold text-[10px] tracking-wider text-brand-neon">${p.category}</span>
+                            </div>
+                            <h3 class="font-display font-black text-white text-base group-hover:text-brand-neon transition-colors cursor-pointer" onclick="openQuickModal('${p.id}')">
+                                ${p.name}
+                            </h3>
+                            <p class="text-xs text-brand-muted line-clamp-2 leading-relaxed">${p.description}</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-brand-border/40 mt-3">
+                        <span class="font-display font-black text-white text-lg">$${p.price} MXN</span>
+                        <button onclick="addToCart('${p.id}')" class="p-3 bg-brand-surface text-white hover:bg-brand-neon hover:text-black rounded-xl border border-brand-border transition-all hover:scale-105" title="AÃ±adir al Carrito">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Add Product To Cart
+        function addToCart(id, chosenSize, chosenColor) {
+            const product = PRODUCTS_DATA.find(p => p.id === id);
+            if (!product) return;
+
+            const size = chosenSize || product.sizes[0];
+            const color = chosenColor || product.colors[0].name;
+
+            const existing = cartState.find(item => item.id === id && item.size === size && item.color === color);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cartState.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    size: size,
+                    color: color,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            showToast(`AÃ±adido: ${product.name}`);
+            openCart();
+        }
+
+        // Update Cart Quantities
+        function updateItemQuantity(index, delta) {
+            cartState[index].quantity += delta;
+            if (cartState[index].quantity <= 0) {
+                cartState.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cartState.splice(index, 1);
+            updateCartUI();
+        }
+
+        // Refresh Cart Interface & Calculations
+        function updateCartUI() {
+            const totalItems = cartState.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count-badge').textContent = totalItems;
+            document.getElementById('cart-drawer-count').textContent = totalItems;
+
+            const container = document.getElementById('cart-items-container');
+            const emptyView = document.getElementById('cart-empty-view');
+
+            if (cartState.length === 0) {
+                emptyView.classList.remove('hidden');
+                container.querySelectorAll('.cart-item-card').forEach(el => el.remove());
+                document.getElementById('cart-subtotal-text').textContent = '$0 MXN';
+                document.getElementById('cart-total-text').textContent = '$0 MXN';
+                updateShippingProgress(0);
+                return;
+            }
+
+            emptyView.classList.add('hidden');
+            container.querySelectorAll('.cart-item-card').forEach(el => el.remove());
+
+            let subtotal = 0;
+
+            cartState.forEach((item, index) => {
+                subtotal += item.price * item.quantity;
+                const el = document.createElement('div');
+                el.className = 'cart-item-card flex items-center gap-4 glass-card p-3.5 rounded-2xl border border-brand-border';
+                el.innerHTML = `
+                    <img src="${item.image}" class="w-16 h-16 object-cover rounded-xl bg-brand-surface" alt="${item.name}">
+                    <div class="flex-grow">
+                        <h4 class="font-display font-bold text-xs text-white leading-tight">${item.name}</h4>
+                        <p class="text-[10px] text-brand-muted mt-1">Talla: ${item.size} | ${item.color}</p>
+                        <p class="font-display font-black text-xs text-brand-neon mt-1">$${item.price * item.quantity} MXN</p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <button onclick="removeItem(${index})" class="text-gray-500 hover:text-red-400 p-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        <div class="flex items-center border border-brand-border rounded-lg bg-brand-surface">
+                            <button onclick="updateItemQuantity(${index}, -1)" class="px-2 py-0.5 text-xs text-gray-300 hover:text-white">-</button>
+                            <span class="px-2 text-xs font-bold text-white">${item.quantity}</span>
+                            <button onclick="updateItemQuantity(${index}, 1)" class="px-2 py-0.5 text-xs text-gray-300 hover:text-white">+</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(el);
+            });
+
+            const discountAmount = subtotal * appliedDiscount;
+            const finalTotal = subtotal - discountAmount;
+
+            document.getElementById('cart-subtotal-text').textContent = `$${subtotal.toFixed(0)} MXN`;
+            document.getElementById('cart-total-text').textContent = `$${finalTotal.toFixed(0)} MXN`;
+
+            if (appliedDiscount > 0) {
+                document.getElementById('discount-row').classList.remove('hidden');
+                document.getElementById('cart-discount-text').textContent = `-$${discountAmount.toFixed(0)} MXN`;
+            } else {
+                document.getElementById('discount-row').classList.add('hidden');
+            }
+
+            updateShippingProgress(subtotal);
+            lucide.createIcons();
+        }
+
+        // Free Shipping Meter Calculation
+        function updateShippingProgress(subtotal) {
+            const threshold = 999;
+            const progress = Math.min(100, (subtotal / threshold) * 100);
+            
+            document.getElementById('shipping-progress-bar').style.width = `${progress}%`;
+            document.getElementById('shipping-progress-percent').textContent = `${Math.round(progress)}%`;
+
+            const txt = document.getElementById('shipping-progress-text');
+            const shipTxt = document.getElementById('cart-shipping-text');
+
+            if (subtotal >= threshold) {
+                txt.textContent = 'Â¡Felicidades! Calificas para EnvÃ­o GRATIS â¡';
+                shipTxt.textContent = 'GRATIS';
+                shipTxt.className = 'text-brand-neon font-bold';
+            } else {
+                const diff = threshold - subtotal;
+                txt.textContent = `Agrega $${diff} MXN mÃ¡s para EnvÃ­o GRATIS`;
+                shipTxt.textContent = '$120 MXN';
+                shipTxt.className = 'text-white font-bold';
+            }
+        }
+
+        // Quick View Modal Modal Controls
+        function openQuickModal(id) {
+            const p = PRODUCTS_DATA.find(item => item.id === id);
+            if (!p) return;
+
+            let selectedSize = p.sizes[0];
+            let selectedColor = p.colors[0].name;
+
+            const modalBody = document.getElementById('quick-modal-body');
+            modalBody.innerHTML = `
+                <div class="aspect-square rounded-2xl overflow-hidden bg-brand-surface border border-brand-border">
+                    <img src="${p.image}" class="w-full h-full object-cover" alt="${p.name}">
+                </div>
+
+                <div class="space-y-5 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-[10px] font-display font-black text-brand-neon uppercase tracking-widest px-2.5 py-1 bg-brand-neon/10 rounded-lg">
+                            ${p.badge}
+                        </span>
+                        <h2 class="text-2xl font-display font-black text-white uppercase leading-tight">${p.name}</h2>
+                        <p class="text-2xl font-display font-black text-brand-neon">$${p.price} MXN</p>
+                        <p class="text-xs text-brand-muted leading-relaxed">${p.description}</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-xs font-display font-bold text-gray-300 uppercase block mb-2">Color: <span id="modal-color-name" class="text-white">${selectedColor}</span></label>
+                            <div class="flex gap-2">
+                                ${p.colors.map((c, idx) => `
+                                    <button onclick="setModalColor('${c.name}', this)" class="modal-color-opt w-8 h-8 rounded-full border border-gray-600 ${idx === 0 ? 'ring-2 ring-brand-neon' : ''}" style="background-color: ${c.hex}"></button>
+                                me`).join('')}
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-display font-bold text-gray-300 uppercase block mb-2">Talla Fit</label>
+                            <div class="flex flex-wrap gap-2">
+                                ${p.sizes.map((s, idx) => `
+                                    <button onclick="setModalSize('${s}', this)" class="modal-size-opt px-4 py-2 rounded-xl text-xs font-display font-bold border ${idx === 0 ? 'bg-brand-neon text-black border-brand-neon' : 'bg-brand-surface text-white border-brand-border'}">${s}</button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <button id="modal-submit-btn" class="w-full py-4 bg-brand-neon text-black font-display font-black text-xs uppercase rounded-xl hover:bg-lime-300 transition-all shadow-neon-glow flex items-center justify-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> AÃ±adir al Carrito
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            window.setModalColor = (cName, btn) => {
+                selectedColor = cName;
+                document.getElementById('modal-color-name').textContent = cName;
+                document.querySelectorAll('.modal-color-opt').forEach(b => b.classList.remove('ring-2', 'ring-brand-neon'));
+                btn.classList.add('ring-2', 'ring-brand-neon');
+            };
+
+            window.setModalSize = (sName, btn) => {
+                selectedSize = sName;
+                document.querySelectorAll('.modal-size-opt').forEach(b => {
+                    b.className = 'modal-size-opt px-4 py-2 rounded-xl text-xs font-display font-bold border bg-brand-surface text-white border-brand-border';
+                });
+                btn.className = 'modal-size-opt px-4 py-2 rounded-xl text-xs font-display font-bold border bg-brand-neon text-black border-brand-neon';
+            };
+
+            document.getElementById('modal-submit-btn').onclick = () => {
+                addToCart(p.id, selectedSize, selectedColor);
+                closeQuickModal();
+            };
+
+            document.getElementById('quick-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeQuickModal() {
+            document.getElementById('quick-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Wishlist Toggle
+        function toggleWishlist(id) {
+            const index = wishlistState.indexOf(id);
+            if (index > -1) {
+                wishlistState.splice(index, 1);
+                showToast('Eliminado de lista de deseos');
+            } else {
+                wishlistState.push(id);
+                showToast('AÃ±adido a lista de deseos â¤ï¸');
+            }
+            const countEl = document.getElementById('wishlist-count');
+            countEl.textContent = wishlistState.length;
+            countEl.classList.toggle('hidden', wishlistState.length === 0);
+            renderProducts(activeCategory);
+        }
+
+        // Open & Close Drawer Functions
+        function openCart() {
+            document.getElementById('cart-drawer').classList.remove('translate-x-full');
+            document.getElementById('cart-drawer-backdrop').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cart-drawer').classList.add('translate-x-full');
+            document.getElementById('cart-drawer-backdrop').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Notification Toast Display
+        function showToast(msg) {
+            const toast = document.getElementById('toast-notif');
+            document.getElementById('toast-text').textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        function filterCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "filter-btn active px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all bg-brand-neon text-black border border-brand-neon";
+                } else {
+                    btn.className = "filter-btn px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all glass-card text-gray-300 hover:text-white border-brand-border";
+                }
+            });
+            renderProducts(cat);
+        }
+
+        function proceedToCheckout() {
+            if (cartState.length === 0) return;
+            alert('Â¡Gracias por elegir KOVI! Redirigiendo a pasarela de pago encriptada SSL...');
+            cartState = [];
+            appliedDiscount = 0;
+            updateCartUI();
+            closeCart();
+        }
+
+        // Event Listeners Registration
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+
+            // Mobile Navigation Toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Filter Buttons Event Delegation
+            document.getElementById('filter-buttons').addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    filterCategory(e.target.dataset.cat);
+                }
+            });
+
+            // Cart Drawer Events
+            document.getElementById('cart-open-btn').addEventListener('click', openCart);
+            document.getElementById('cart-close-btn').addEventListener('click', closeCart);
+            document.getElementById('cart-drawer-backdrop').addEventListener('click', closeCart);
+
+            // Quick Modal Events
+            document.getElementById('close-modal-btn').addEventListener('click', closeQuickModal);
+
+            // Search Bar Drawer Toggle
+            const searchToggleBtn = document.getElementById('search-toggle-btn');
+            const searchDrawer = document.getElementById('search-drawer');
+            const searchCloseBtn = document.getElementById('search-close-btn');
+            const liveSearchInput = document.getElementById('live-search-input');
+
+            searchToggleBtn.addEventListener('click', () => {
+                searchDrawer.classList.toggle('hidden');
+                if (!searchDrawer.classList.contains('hidden')) {
+                    liveSearchInput.focus();
+                }
+            });
+
+            searchCloseBtn.addEventListener('click', () => {
+                searchDrawer.classList.add('hidden');
+            });
+
+            liveSearchInput.addEventListener('input', (e) => {
+                renderProducts(activeCategory, e.target.value);
+            });
+
+            // Coupon Code Application
+            document.getElementById('apply-coupon-btn').addEventListener('click', () => {
+                const code = document.getElementById('coupon-code-input').value.trim().toUpperCase();
+                if (code === 'KOVI15') {
+                    appliedDiscount = 0.15;
+                    showToast('Â¡CupÃ³n KOVI15 Aplicado! (15% OFF)');
+                } else {
+                    showToast('CÃ³digo de descuento no vÃ¡lido');
+                }
+                updateCartUI();
+            });
+        });
+    </script>
+</body>
+</html>
